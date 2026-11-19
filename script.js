@@ -5,8 +5,6 @@ const PORTFOLIO_CONFIG = {
   email: "chrispajara193@gmail.com",
   facebook: "https://www.facebook.com/Christoph.24/",
   instagram: "https://www.instagram.com/zyrusitaurus/",
-  // Optional: Paste a Google Apps Script Web App URL to save contact messages to Google Sheets
-  gasWebAppUrl: "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL",
   roles: [
     "interactive web apps",
     "responsive UI/UX systems",
@@ -158,15 +156,44 @@ function initMobileNav() {
 /* 3. Smooth Role Rotator */
 function initRoleRotator() {
   const el = document.getElementById("roleRotator");
-  let idx = 0;
-  setInterval(() => {
-    idx = (idx + 1) % PORTFOLIO_CONFIG.roles.length;
-    el.style.opacity = "0";
-    setTimeout(() => {
-      el.textContent = PORTFOLIO_CONFIG.roles[idx];
-      el.style.opacity = "1";
-    }, 220);
-  }, 3000);
+  const roles = PORTFOLIO_CONFIG.roles;
+  if (!el || !roles.length) return;
+
+  let roleIndex = 0;
+  let charIndex = roles[0].length;
+  let isDeleting = false;
+
+  el.textContent = roles[0];
+
+  function tick() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+      charIndex--;
+    } else {
+      charIndex++;
+    }
+
+    el.textContent = currentRole.slice(0, charIndex);
+
+    let delay = isDeleting ? 35 : 65;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      isDeleting = true;
+      delay = 2000;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      delay = 350;
+    }
+
+    setTimeout(tick, delay);
+  }
+
+  setTimeout(() => {
+    isDeleting = true;
+    tick();
+  }, 2000);
 }
 
 /* 4. Interactive Hero Terminal */
