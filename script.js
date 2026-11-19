@@ -3,8 +3,8 @@ const PORTFOLIO_CONFIG = {
   fullName: "Christopher Zyrus G. Pajara",
   location: "Philippines",
   email: "chrispajara193@gmail.com",
-  github: "https://github.com/chrispajara193-sketch",
-  linkedin: "https://linkedin.com/in/your-username",
+  facebook: "https://www.facebook.com/Christoph.24/",
+  instagram: "https://www.instagram.com/zyrusitaurus/",
   // Optional: Paste a Google Apps Script Web App URL to save contact messages to Google Sheets
   gasWebAppUrl: "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL",
   roles: [
@@ -97,9 +97,7 @@ const PROJECTS_DATA = [
   }
 ];
 
-/* =========================================================
-   Initialization
-========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
   initTheme();
@@ -117,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function applyConfig() {
   document.getElementById("navBrandName").textContent = PORTFOLIO_CONFIG.brandHandle;
   document.getElementById("heroName").textContent = PORTFOLIO_CONFIG.fullName;
-  document.getElementById("githubLink").href = PORTFOLIO_CONFIG.github;
-  document.getElementById("linkedinLink").href = PORTFOLIO_CONFIG.linkedin;
+  document.getElementById("facebookLink").href = PORTFOLIO_CONFIG.facebook;
+  document.getElementById("instagramLink").href = PORTFOLIO_CONFIG.instagram;
   document.getElementById("directEmailLink").href = `mailto:${PORTFOLIO_CONFIG.email}`;
   document.getElementById("footerCopy").textContent = `© ${new Date().getFullYear()} ${PORTFOLIO_CONFIG.fullName}. All rights reserved.`;
 }
@@ -206,7 +204,8 @@ function initTerminal() {
         break;
       case "contact":
         appendLine(`Email: ${PORTFOLIO_CONFIG.email}`);
-        appendLine(`GitHub: ${PORTFOLIO_CONFIG.github}`);
+        appendLine(`Facebook: ${PORTFOLIO_CONFIG.facebook}`);
+        appendLine(`Instagram: ${PORTFOLIO_CONFIG.instagram}`);
         break;
       case "clear":
         output.innerHTML = "";
