@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio — Interactive Web &amp; UI/UX Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span id="navBrandName">dev.portfolio</span>
+      </a>
+
+      <nav id="navLinks" class="nav-links" aria-label="Primary Navigation">
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">Approach</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Light/Dark Mode" title="Toggle Theme">☀️</button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="availability-pill">
+            <span class="pulse-dot"></span>
+            Available for Frontend &amp; Full-Stack Opportunities
+          </div>
+
+          <h1>
+            Hi, I'm <span id="heroName" class="gradient-text">Your Name</span>.<br />
+            I build <span id="roleRotator" class="role-rotator">interactive web apps</span>.
+          </h1>
+
+          <p id="heroBio" class="hero-subtitle">
+            Web Developer crafting responsive user interfaces, data-driven API dashboards, and interactive browser experiences with clean, maintainable code.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">Explore My Work ↓</a>
+            <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+            <button id="copyEmailBtn" class="btn btn-ghost" title="Copy Email Address">📋 Copy Email</button>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal Widget -->
+        <div class="terminal-card reveal" aria-label="Interactive Developer Terminal">
+          <div class="terminal-header">
+            <div class="term-dots"><span></span><span></span><span></span></div>
+            <span class="term-title">portfolio-cli — zsh</span>
+          </div>
+          <div id="terminalOutput" class="terminal-body">
+            <div class="term-line muted">Welcome! Click a command below or type <code>help</code>.</div>
+          </div>
+          <div class="terminal-chips">
+            <button class="chip-btn" data-cmd="whoami">whoami</button>
+            <button class="chip-btn" data-cmd="skills">skills</button>
+            <button class="chip-btn" data-cmd="projects">projects</button>
+            <button class="chip-btn" data-cmd="contact">contact</button>
+            <button class="chip-btn" data-cmd="clear">clear</button>
+          </div>
+          <form id="terminalForm" class="terminal-input-row">
+            <span class="prompt">$</span>
+            <input id="terminalInput" type="text" placeholder="Type a command (e.g. help)..." autocomplete="off" spellcheck="false" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-eyebrow">Capabilities</span>
+            <h2>Technical Skills &amp; Stack</h2>
+          </div>
+          <div class="filter-group" role="tablist" aria-label="Filter skills by category">
+            <button class="filter-btn active" data-skill-filter="all">All</button>
+            <button class="filter-btn" data-skill-filter="frontend">Frontend &amp; UI</button>
+            <button class="filter-btn" data-skill-filter="data">APIs &amp; Data</button>
+            <button class="filter-btn" data-skill-filter="backend">Backend &amp; Tools</button>
+          </div>
+        </div>
+
+        <div id="skillsGrid" class="skills-grid reveal"></div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-eyebrow">Selected Work</span>
+            <h2>Featured Portfolio Projects</h2>
+            <p class="section-sub">Three end-to-end applications demonstrating UI/UX craft, REST API integration, and Canvas game engineering.</p>
+          </div>
+          <div class="filter-group" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-project-filter="all">All (3)</button>
+            <button class="filter-btn" data-project-filter="ui">UI/UX</button>
+            <button class="filter-btn" data-project-filter="api">API &amp; Data</button>
+            <button class="filter-btn" data-project-filter="game">Canvas Game</button>
+          </div>
+        </div>
+
+        <div id="projectsGrid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- Engineering Approach -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-eyebrow">How I Build</span>
+            <h2>Engineering Principles</h2>
+          </div>
+        </div>
+
+        <div class="bento-pillars reveal">
+          <article class="pillar-card">
+            <span class="pillar-num">01</span>
+            <h3>Responsive &amp; Accessible UI</h3>
+            <p>Every interface is built mobile-first with semantic HTML, keyboard navigation, ARIA states, and smooth light/dark theming.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-num">02</span>
+            <h3>Resilient Data &amp; APIs</h3>
+            <p>From live FX rate caching in <code>localStorage</code> to CORS-safe serverless endpoints in Google Apps Script, apps gracefully handle offline states.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="pillar-num">03</span>
+            <h3>Zero-Bloat Performance</h3>
+            <p>Deep mastery of core HTML5, CSS Grid/Flexbox, Canvas rendering, and vanilla JavaScript before layering heavy frameworks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2>Let's build something great together.</h2>
+          <p>Looking for a developer for your team or freelance project? Send a message directly or connect via my links below.</p>
+
+          <div class="social-links">
+            <a id="githubLink" href="#" target="_blank" rel="noopener noreferrer" class="social-pill">GitHub ↗</a>
+            <a id="linkedinLink" href="#" target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn ↗</a>
+            <a id="directEmailLink" href="#" class="social-pill">Email Me ↗</a>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-card reveal" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cName">Your Name *</label>
+              <input type="text" id="cName" placeholder="Jane Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="cEmail">Email Address *</label>
+              <input type="email" id="cEmail" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cMessage">Project or Inquiry *</label>
+            <textarea id="cMessage" rows="4" placeholder="Tell me about your role, timeline, or project idea..." required></textarea>
+          </div>
+          <button type="submit" id="cSubmitBtn" class="btn btn-primary btn-full">Send Message</button>
+          <div id="cStatus" class="form-status" role="alert" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span id="footerCopy">© 2026 Developer Portfolio. Built with HTML, CSS &amp; Vanilla JS.</span>
+      <a href="#top" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Case Study Modal -->
+  <div id="caseModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <div class="modal-top">
+        <span id="modalCategory" class="tag-pill">Category</span>
+        <button id="closeModalBtn" class="icon-btn" aria-label="Close Case Study">✕</button>
+      </div>
+      <h2 id="modalTitle">Project Title</h2>
+      <p id="modalSummary" class="modal-summary"></p>
+
+      <div class="modal-section">
+        <h4>Key Technical Highlights</h4>
+        <ul id="modalHighlights" class="modal-list"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Tech Stack</h4>
+        <div id="modalStack" class="stack-row"></div>
+      </div>
+
+      <div class="modal-actions">
+        <a id="modalLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch Live App ↗</a>
+        <a id="modalCodeLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Source Code</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastWrap" class="toast-wrap" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
