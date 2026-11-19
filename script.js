@@ -1,6 +1,3 @@
-/* =========================================================
-   EASY PORTFOLIO CONFIGURATION — EDIT YOUR DETAILS HERE
-========================================================= */
 const PORTFOLIO_CONFIG = {
   brandHandle: "Chris.dev",
   fullName: "Christopher Zyrus G. Pajara",
@@ -123,7 +120,7 @@ function applyConfig() {
   document.getElementById("githubLink").href = PORTFOLIO_CONFIG.github;
   document.getElementById("linkedinLink").href = PORTFOLIO_CONFIG.linkedin;
   document.getElementById("directEmailLink").href = `mailto:${PORTFOLIO_CONFIG.email}`;
-  document.getElementById("footerCopy").textContent = `© ${new Date().getFullYear()} ${PORTFOLIO_CONFIG.fullName}. Deployed on Vercel.`;
+  document.getElementById("footerCopy").textContent = `© ${new Date().getFullYear()} ${PORTFOLIO_CONFIG.fullName}. All rights reserved.`;
 }
 
 /* 1. Theme Toggle */
