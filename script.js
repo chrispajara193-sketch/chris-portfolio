@@ -268,11 +268,9 @@ function renderProjects(filter) {
         </div>
         <div class="project-actions">
           <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo ↗</a>
-          <button class="btn btn-secondary case-btn">Case Study</button>
         </div>
       </div>
     `;
-    card.querySelector(".case-btn").addEventListener("click", () => openCaseModal(p));
     grid.appendChild(card);
   });
 }
