@@ -2,11 +2,11 @@
    EASY PORTFOLIO CONFIGURATION — EDIT YOUR DETAILS HERE
 ========================================================= */
 const PORTFOLIO_CONFIG = {
-  brandHandle: "yourname.dev",
-  fullName: "Your Name",
+  brandHandle: "Chris.dev",
+  fullName: "Christopher Zyrus G. Pajara",
   location: "Philippines",
-  email: "your.email@example.com",
-  github: "https://github.com/your-username",
+  email: "chrispajara193@gmail.com",
+  github: "https://github.com/chrispajara193-sketch",
   linkedin: "https://linkedin.com/in/your-username",
   // Optional: Paste a Google Apps Script Web App URL to save contact messages to Google Sheets
   gasWebAppUrl: "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL",
@@ -44,7 +44,7 @@ const PROJECTS_DATA = [
       </div>`,
     shortDesc: "Modern SaaS product landing page featuring a pure CSS dashboard mockup, interactive monthly/annual pricing toggle, and serverless lead capture.",
     stack: ["HTML5", "CSS3", "JavaScript", "Google Apps Script"],
-    liveUrl: "https://aetherflow-ui.vercel.app",
+    liveUrl: "https://aetherflow-saas-landing.vercel.app/",
     codeUrl: "https://github.com/your-username/aetherflow-saas-landing",
     highlights: [
       "Built an interactive dashboard preview entirely with CSS Grid/Flexbox (zero heavy screenshots).",
