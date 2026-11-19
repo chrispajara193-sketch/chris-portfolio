@@ -1,6 +1,3 @@
-/* =========================================
-   Theme Tokens
-========================================= */
 :root {
   --bg: #090d16;
   --bg-alt: #0f1624;
@@ -623,10 +620,16 @@ code { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
    Contact & Footer
 ========================================= */
 .contact-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 44px;
-  align-items: start;
+  max-width: 660px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.contact-info {
+  text-align: center;
 }
 
 .contact-info h2 {
@@ -643,7 +646,8 @@ code { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
 .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
 }
 
 .social-pill {
@@ -658,6 +662,7 @@ code { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
 .social-pill:hover { border-color: var(--primary); }
 
 .contact-card {
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
